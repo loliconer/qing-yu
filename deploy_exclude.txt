@@ -1,0 +1,3 @@
+/dist/upload
+/server/upload
+doc.db

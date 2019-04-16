@@ -1,0 +1,112 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.app-repo {
+  min-height: 100vh;
+
+  .header {
+    background-color: var(--white);
+
+    .container {
+      .flex-between;
+      padding-top: var(--3unit);
+    }
+
+    .v-tab {
+      font-size: var(--small-font);
+      border-bottom: none;
+    }
+  }
+
+  .main {
+    padding-bottom: 100px;
+  }
+
+  .repo-cover {
+    padding: var(--5unit);
+    background-color: var(--white);
+    min-height: 700px;
+
+    .c-title {
+      text-align: center;
+    }
+
+    .c-desc {
+      text-indent: 0;
+      text-align: center;
+    }
+
+    .c-content {
+      padding: var(--5unit) 0;
+    }
+
+    .c-catalog-empty {
+      background: url(/img/catalog.png) no-repeat;
+      background-size: 620px 417px;
+      width: 620px;
+      height: 417px;
+      margin: 0 auto;
+    }
+  }
+
+  .repo-set {
+    display: flex;
+
+    > .l {
+      width: 300px;
+
+      .mod-aside-nav {
+        min-height: auto;
+      }
+    }
+
+    > .r {
+      flex: 1;
+      margin-left: var(--2unit);
+    }
+
+    .s-content {
+
+    }
+
+    .set-basic {
+      background-color: var(--white);
+    }
+
+    .set-form {
+      max-width: 480px;
+      padding: var(--2unit);
+
+      .r-label {
+        font-size: var(--small-font);
+        margin-bottom: var(--unit);
+      }
+
+      .r-control {
+        margin-bottom: var(--3unit);
+
+        .v-input,
+        .textarea {
+          width: 100%;
+        }
+
+        .textarea {
+          resize: vertical;
+          padding: 4px var(--unit);
+        }
+      }
+    }
+
+    .mod-card {
+      background-color: var(--white);
+
+      .c-body {
+        > p {
+          text-indent: 0;
+          font-size: var(--small-font);
+          margin-top: 0;
+          color: var(--second-color);
+        }
+      }
+    }
+  }
+}

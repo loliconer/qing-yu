@@ -1,0 +1,127 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.app-post {
+  .header {
+    height: var(--bar-height);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--3unit);
+
+    .logo {
+      img {
+        height: 40px;
+      }
+    }
+
+    .h-act {
+      .flex-start;
+      margin-left: var(--3unit);
+
+      > .v-select,
+      > .mod-label-input,
+      > .title-input {
+        margin-left: var(--2unit);
+      }
+
+      > .v-select {
+        width: 120px;
+      }
+
+      > .title-input {
+        width: 600px;
+        border-color: transparent;
+      }
+    }
+
+    .h-submit {
+      margin-left: auto;
+    }
+  }
+
+  .container {
+    width: 100vw;
+  }
+
+  .v-editor {
+    .ve-body {
+      height: calc(100vh - 88px);
+    }
+  }
+
+  .popup-other {
+    .v-window {
+      .win-content {
+        overflow-y: inherit;
+      }
+    }
+
+    .row {
+      .flex-start;
+      margin-bottom: var(--3unit);
+
+      .label {
+        font-size: var(--small-font);
+      }
+
+      .textarea {
+        flex: 1;
+        min-height: 100px;
+        padding: 4px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .vue-tag {
+      .vt-candidates {
+        width: 446px;
+      }
+    }
+  }
+
+  .uploaded-files {
+    margin-left: 10px;
+
+    .appendix {
+      border: 1px solid var(--border-color);
+      padding: 6px 8px;
+      border-radius: var(--border-radius);
+      margin-right: 10px;
+
+      > span {
+        margin-left: 6px;
+        padding-left: 6px;
+        border-left: 1px solid var(--border-color);
+        color: var(--error-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .markdown-body {
+    ol {
+      list-style: decimal;
+    }
+    ul {
+      list-style: inherit;
+    }
+
+    p {
+      text-indent: 0;
+    }
+  }
+
+  .go-to-collaborate {
+    margin-bottom: var(--3unit);
+  }
+
+  .popup-category-tree {
+    .v-window {
+      .win-content {
+        max-height: calc(85vh - var(--bar-height));
+      }
+    }
+  }
+}

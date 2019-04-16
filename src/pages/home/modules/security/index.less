@@ -1,0 +1,49 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.child-security {
+  background-color: var(--white);
+
+  .last-login {
+    padding: var(--3unit);
+    font-size: var(--small-font);
+  }
+
+  .mod-item-bar {
+    .i-head {
+      > div {
+        flex: 1;
+      }
+
+      .i-op {
+        text-align: right;
+      }
+    }
+  }
+
+  .layout-form {
+    .row {
+      margin-bottom: var(--3unit);
+    }
+
+    .v-input.effect {
+      width: 300px;
+
+      .input {
+        width: 100%;
+      }
+    }
+
+    .controls {
+      width: 300px;
+
+      .v-input.effect {
+        flex: 1;
+        width: auto;
+      }
+
+      .v-btn {
+        margin-left: var(--unit);
+      }
+    }
+  }
+}

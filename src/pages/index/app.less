@@ -1,0 +1,36 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.app-index {
+  .main {
+    display: flex;
+
+    > .left {
+      width: 300px;
+    }
+
+    > .right {
+      width: 32px;
+    }
+
+    > .content {
+      flex: 1;
+      background-color: var(--white);
+      padding: 16px 48px;
+      max-height: calc(100vh - 68px);
+      overflow-y: auto;
+    }
+  }
+
+  article.blog {
+    margin-bottom: 40px;
+  }
+
+  .mod-comments {
+    margin-top: var(--5unit);
+  }
+
+  .init {
+    text-align: center;
+    line-height: 81px;
+  }
+}

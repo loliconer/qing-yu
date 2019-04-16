@@ -1,0 +1,22 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.app-blog {
+  .main {
+    position: relative;
+    padding: var(--3unit);
+    background-color: var(--white);
+  }
+
+  .mod-tools {
+    position: absolute;
+    top: 44px;
+    right: -32px;
+    width: 32px;
+  }
+
+  @media (max-width: 576px) {
+    .mod-tools {
+      display: none;
+    }
+  }
+}

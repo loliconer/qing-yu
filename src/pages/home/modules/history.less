@@ -1,0 +1,19 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.child-history {
+  background-color: var(--white);
+
+  .init {
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .link {
+    color: var(--blue-color);
+    transition: color .2s;
+
+    &:hover {
+      color: var(--hover-blue);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import (reference) "Bootstrapping/Mixins";
+@import "Layout/Blog.less";
+@import "Components/Modules";
+@import "layout";
+@import "pro";
+
+body.overhidden {
+  overflow: hidden;
+}
+
+#app {
+  background-color: var(--bg-color);
+
+  > .main {
+    min-height: calc(100vh - 50px);
+    margin: 0 auto;
+    padding-top: var(--2unit);
+    padding-bottom: 1px;
+  }
+}
+
+.icon-down-wide {
+  transition: transform .2s ease-out;
+
+  &.dir-left {
+    transform: rotateZ(90deg);
+  }
+  &.dir-up {
+    transform: rotateZ(180deg);
+  }
+  &.dir-right {
+    transform: rotateZ(-90deg);
+  }
+}
+
+.icon-refresh.rotate {
+  color: var(--blue-color);
+  animation: rotate-reverse 2s linear infinite;
+}
+
+.v-dropdown {
+  a {
+    .flex-start;
+  }
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--disabled-color);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .2);
+
+  &:hover {
+    background-color: var(--second-color);
+  }
+}

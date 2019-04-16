@@ -1,0 +1,99 @@
+@import (reference) "~src/less/Bootstrapping/Mixins";
+
+.child-repo {
+  .repo-head {
+    .flex-between;
+    padding: var(--unit) var(--2unit);
+    background-color: var(--white);
+
+    .h-actions {
+      .flex-start;
+
+      .v-search {
+        margin-right: var(--unit);
+      }
+    }
+  }
+
+  .v-popup {
+    .win-content {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        .flex-start;
+        margin-bottom: var(--3unit);
+
+        > span {
+          font-size: var(--small-font);
+          min-width: 100px;
+        }
+
+        > .v-input,
+        > .textarea,
+        > .v-select {
+          flex: 1;
+        }
+
+        > .textarea {
+          resize: vertical;
+          padding: 4px var(--unit);
+        }
+
+        .v-radio-group {
+          .g-item {
+            margin-right: 0;
+
+            &:first-child {
+              .v-radio-button {
+                span {
+                  border-top-right-radius: 0;
+                  border-bottom-right-radius: 0;
+                }
+              }
+            }
+
+            &:last-child {
+              .v-radio-button {
+                span {
+                  border-top-left-radius: 0;
+                  border-bottom-left-radius: 0;
+                }
+              }
+            }
+          }
+        }
+
+        &.label-textarea {
+          align-items: flex-start;
+
+          > span {
+            margin-top: var(--unit);
+          }
+        }
+
+        &.label-path {
+          .mod-path {
+            flex: 1;
+
+            .input[readonly] {
+              max-width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .v-table {
+    .col-name {
+      .link {
+
+        .icon {
+          color: var(--blue-color);
+          margin-right: var(--unit);
+        }
+      }
+    }
+  }
+}
