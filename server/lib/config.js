@@ -13,5 +13,6 @@ module.exports = {
   aliyunSMSDuration: 300,
   enableMobilePhone: false,
   limitCompany: true,
-  companyDomain: 'gmail.com'
+  companyDomain: 'gmail.com',
+  serverPort: 8101
 }

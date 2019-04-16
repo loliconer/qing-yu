@@ -116,8 +116,21 @@ server.get('/api/views/:view', guard.jwtVerify, async function (req, res) {
 server.post('/api/files', routes.system.upload)
 server.post('/api/verifyCode', routes.system.sendVerifyCode)
 
+server.get('/', restify.plugins.serveStatic({
+  directory: '../dist',
+  default: 'index.html'
+}))
+
+server.get('/*/*.html', restify.plugins.serveStatic({
+  directory: '../dist'
+}))
+
+server.get('/(js|css|img|fonts/*', restify.plugins.serveStatic({
+  directory: '../dist'
+}))
+
 server.on('restifyError', function (req, res, err, callback) {
   res.json(makeSequelizeError(err))
 })
 
-server.listen(8101, () => console.log('%s listening at %s', server.name, server.url))
+server.listen(config.serverPort, () => console.log('%s listening at %s', server.name, server.url))
