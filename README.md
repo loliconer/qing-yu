@@ -5,7 +5,6 @@
 ![](https://img.shields.io/github/stars/loliconer/qing-yu.svg)
 
 供团队内部使用的共享文档库。内网部署，使用sqlite数据库，npm install 之后即可使用。
----
 
 技术栈：Vue.js + Restify + SQlite3 + JWT
 
