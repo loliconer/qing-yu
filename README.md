@@ -10,19 +10,19 @@ Markdown编辑器：[vue-stackedit](https://github.com/loliconer/vue-stackedit)
 > npm run serve
 
 ## 部署
-> npm run build
+> npm run build  
 > sh deploy.sh
 
 配置nginx或Apache访问dist目录
 
 ## 生产环境后端服务安装，初始化数据库，自动生成管理员用户(admin/123456)，设置基本权限
-> npm install --production
-> npm install -g forever
-> cd server
-> mv template.db doc.db
-> cd scripts
-> node init.js
-> cd ..
+> npm install --production  
+> npm install -g forever  
+> cd server  
+> mv template.db doc.db  
+> cd scripts  
+> node init.js  
+> cd ..  
 > forever start app.js
 
 ## 已开发功能
