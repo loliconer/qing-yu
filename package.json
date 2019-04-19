@@ -1,7 +1,16 @@
 {
   "name": "qing-yu",
   "version": "1.0.0",
-  "private": true,
+  "author": "loliconer",
+  "description": "Manage docs for your team.",
+  "license": "Anti 996",
+  "repository": {
+    "url": "https://github.com/loliconer/qing-yu.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/loliconer/qing-yu/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve --port 8100",
     "server": "nodemon server/app.js",
