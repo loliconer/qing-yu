@@ -1,4 +1,4 @@
-<h1 align="center">轻语</h1>
+<p align="center"><img width="150" src="./public/img/logo.svg"></p>
 
 <p align="center">
   <a href="https://996.icu">
@@ -9,6 +9,8 @@
   </a>
   <img src="https://img.shields.io/github/stars/loliconer/qing-yu.svg">
 </p>
+
+<h1 align="center">轻语</h1>
 
 供团队内部使用的共享文档库。内网部署，使用sqlite数据库，npm install 之后即可使用。
 
