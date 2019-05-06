@@ -42,15 +42,8 @@
         body.attachments = JSON.parse(body.attachments)
         document.title = body.title
 
-        if (body.type === 1) {
-          body.content = marked(body.content)
-          setTimeout(() => Prism.highlightAll(), 0)
-        } else {
-          const content = await $fetch.get(`collaboration/${body.slug}`).catch(this.error)
-          if (content === undefined) return
-          body.content = marked(content)
-          setTimeout(() => Prism.highlightAll(), 0)
-        }
+        body.content = marked(body.content)
+        setTimeout(() => Prism.highlightAll(), 0)
         this.blog = body
       },
       edit() {
