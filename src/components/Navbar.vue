@@ -3,7 +3,7 @@
     <div class="container">
       <div class="l">
         <div class="logo">
-          <a href="/"><img src="/img/logo.png"></a>
+          <a href="/"><img src="/img/logo.svg"></a>
         </div>
         <!--<v-search placeholder="暂不支持搜索"></v-search>-->
       </div>
