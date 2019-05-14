@@ -13,7 +13,7 @@
 </template>
 <script>
   const script = document.createElement('script')
-  script.src = '/js/qrcode.vue.min.js'
+  script.src = '/js/vendors/qrcode.vue.min.js'
   document.body.appendChild(script)
 
   export default {

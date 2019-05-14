@@ -66,6 +66,7 @@
 
 <script>
   import {genSlug} from 'src/js/utils'
+  import {getSearchParam} from 'lovue/dist/utils.esm'
 
   export default {
     name: 'Repo',
@@ -128,7 +129,7 @@
       }
     },
     created() {
-      this.slug = utils.getSearchParam('slug')
+      this.slug = getSearchParam('slug')
       this.getRepo()
     }
   }

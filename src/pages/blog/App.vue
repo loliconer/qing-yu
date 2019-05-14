@@ -16,6 +16,7 @@
 </template>
 <script>
   import VShare from 'src/components/Share.vue'
+  import {getSearchParam} from 'lovue/dist/utils.esm'
 
   export default {
     name: 'App',
@@ -66,7 +67,7 @@
     },
     created() {
       this.getUser()
-      this.getBlog(utils.getSearchParam('id'))
+      this.getBlog(getSearchParam('id'))
     },
     mounted() {
       marked.setOptions({
