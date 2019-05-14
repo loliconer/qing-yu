@@ -23,18 +23,26 @@ Markdown编辑器：[vue-stackedit](https://github.com/loliconer/vue-stackedit)
 ## 完整模式，适合想二次开发并自定义部署的用户
 - 启动开发环境
   > npm run serve
+  > cd server
+  > node app.js
 - 编译并部署到生产环境，需要配置nginx或Apache，配置文件参考 `nginx.conf`
   > npm run build  
   > sh deploy.sh
 - 生产环境安装运行，初始化数据库，自动生成管理员用户(admin/123456)，设置基本权限
-  > sh install.sh  
+  > sh install.sh
+- 配置发送邮件的邮箱：`server/lib/config.js`
+- 启动后台服务
   > sh run.sh
 
 ## 简易模式，适合不想自己开发，直接运行访问的用户
+先配置发送邮件的邮箱：`server/lib/config.js`
 
-默认访问端口：8101，可在server/lib/config.js修改
+默认访问端口：8101，可在`server/lib/config.js`修改
 > sh oneKey.sh  
 > sh run.sh
+
+## 更新
+> sh update.sh
 
 ## 已开发功能
 - 注册

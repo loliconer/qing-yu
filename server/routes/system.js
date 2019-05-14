@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer')
 
 module.exports = {
   upload(req, res, next) {
-    res.json({ code: 0, data: req.files.files.path })
+    res.json({ code: 0, data: req.files.files.path.replace('\\', '/') })
   },
   sendVerifyCode(req, res, next) {
     const { method = 'sms', target, action = 'login' } = req.body
@@ -52,17 +52,17 @@ module.exports = {
       const code = util.generateVerifyCode()
 
       const transporter = nodemailer.createTransport({
-        host: 'smtp.qiye.163.com',
+        host: config.emailHost,
         port: 465,
         secure: true,
         auth: {
-          user: 'rss@mycapital.net',
-          pass: 'Mycapital01'
+          user: config.emailUser,
+          pass: config.emailPass
         }
       })
 
       const mailOptions = {
-        from: 'rss@mycapital.net',
+        from: config.emailUser,
         to: target,
         subject: '邮箱验证',
         html: `您的验证码为：<span style="font-weight: bold; color: #ffbf00">${code}</span>，5分钟内有效！`

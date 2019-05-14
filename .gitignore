@@ -2,6 +2,7 @@
 node_modules
 dist
 server/doc.db
+server/upload
 
 # local env files
 .env.local

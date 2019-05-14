@@ -14,5 +14,8 @@ module.exports = {
   enableMobilePhone: false,
   limitCompany: true,
   companyDomain: 'gmail.com',
-  serverPort: 8101
+  serverPort: 8101,
+  emailHost: 'smtp.163.com',
+  emailUser: '',
+  emailPass: ''
 }

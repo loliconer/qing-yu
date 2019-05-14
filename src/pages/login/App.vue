@@ -1,7 +1,7 @@
 <template>
   <div class="app-login">
     <section>
-      <a class="logo-wrap" href="/"><img class="logo" src="/img/logo.png"> 轻语</a>
+      <a class="logo-wrap" href="/"><img class="logo" src="/img/logo.svg" alt="轻语"></a>
       <c-login v-if="isShowLogin" @to-register="toRegister" @to-reset="toReset" :enable-mobile-phone="configs.enableMobilePhone"></c-login>
       <c-register v-if="isShowRegister" @to-login="toLogin" :configs="configs"></c-register>
       <c-reset v-if="isShowReset" @to-login="toLogin" :enable-mobile-phone="configs.enableMobilePhone"></c-reset>

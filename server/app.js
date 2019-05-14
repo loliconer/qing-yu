@@ -4,6 +4,8 @@ const guard = require('./lib/guard')
 const config = require('./lib/config')
 const { makeSequelizeError } = require('./lib/util')
 
+console.log(process.argv)
+
 const server = restify.createServer({
   name: 'Server',
   version: '1.0.0'
@@ -127,6 +129,10 @@ server.get('/*/*.html', restify.plugins.serveStatic({
 
 server.get('/(js|css|img|fonts/*', restify.plugins.serveStatic({
   directory: '../dist'
+}))
+
+server.get('/upload/*', restify.plugins.serveStatic({
+  directory: '../server'
 }))
 
 server.on('restifyError', function (req, res, err, callback) {
