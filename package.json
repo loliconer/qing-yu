@@ -25,8 +25,8 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.10.0",
-    "@vue/cli-service": "^3.10.0",
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-service": "^3.9.2",
     "cache-loader": "^4.1.0",
     "less": "^3.10.1",
     "less-loader": "^5.0.0",
