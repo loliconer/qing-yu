@@ -4,8 +4,6 @@ const guard = require('./lib/guard')
 const config = require('./lib/config')
 const { makeSequelizeError } = require('./lib/util')
 
-console.log(process.argv)
-
 const server = restify.createServer({
   name: 'Server',
   version: '1.0.0'

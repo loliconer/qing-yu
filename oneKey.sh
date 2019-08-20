@@ -1,7 +1,7 @@
 #! /bin/bash
 
 npm install -g forever
-npm install
+pnpm install --shamefully-flatten
 npm run build
 cd server
 cp template.db doc.db

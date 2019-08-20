@@ -1,6 +1,6 @@
 {
   "name": "qing-yu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "loliconer",
   "description": "Manage docs for your team.",
   "license": "Anti 996",
@@ -18,23 +18,22 @@
   },
   "dependencies": {
     "got": "^9.6.0",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^8.5.1",
     "nodemailer": "^6.3.0",
-    "restify": "^8.3.3",
-    "sequelize": "^5.10.1",
-    "sqlite3": "^4.0.9",
-    "ws": "^7.1.0",
-    "zxcvbn": "^4.4.2"
+    "restify": "^8.4.0",
+    "sequelize": "^5.15.1",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.2",
-    "@vue/cli-service": "^3.9.2",
-    "less": "^3.8.1",
+    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-service": "^3.10.0",
+    "cache-loader": "^4.1.0",
+    "less": "^3.10.1",
     "less-loader": "^5.0.0",
-    "lovue": "^3.1.0",
+    "lovue": "^3.1.1",
     "marked": "^0.7.0",
     "nprogress": "^0.2.0",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.17.1",
     "qrcode.vue": "^1.6.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
@@ -63,9 +62,8 @@
     }
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie > 0",
-    "not ie_mob > 0"
+    "Chrome >= 70",
+    "Firefox >= 65",
+    "Safari >= 11"
   ]
 }

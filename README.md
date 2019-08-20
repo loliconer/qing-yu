@@ -21,7 +21,8 @@ UI组件库：[lovue](https://github.com/loliconer/lovue)
 Markdown编辑器：[vue-stackedit](https://github.com/loliconer/vue-stackedit)
 
 ## 完整模式，适合想二次开发并自定义部署的用户
-- 启动开发环境
+- 启动开发环境(使用pnpm安装依赖)
+  > pnpm i --shamefully-flatten
   > npm run serve
   > cd server
   > node app.js
