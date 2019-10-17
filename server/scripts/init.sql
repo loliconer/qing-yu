@@ -1,4 +1,4 @@
-PRAGMA foreign_keys=off;
+PRAGMA foreign_keys=OFF;
 
 BEGIN TRANSACTION;
 
@@ -174,10 +174,8 @@ CREATE TABLE userGroup (
     id      INTEGER PRIMARY KEY
                     UNIQUE
                     NOT NULL,
-    userId  INTEGER REFERENCES users (id) ON DELETE CASCADE
-                    NOT NULL,
-    groupId INTEGER REFERENCES groups (id) ON DELETE CASCADE
-                    NOT NULL
+    userId  INTEGER NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    groupId INTEGER NOT NULL REFERENCES groups (id) ON DELETE CASCADE
 );
 
 CREATE TABLE repos (
@@ -223,4 +221,4 @@ INSERT INTO groups (name) VALUES ("普通用户");
 
 COMMIT;
 
-PRAGMA foreign_keys=on;
+PRAGMA foreign_keys=ON;
