@@ -1,3 +1,5 @@
+const {QINGYU_EMAIL_USER, QINGYU_EMAIL_PASS} = process.env
+
 module.exports = {
   salt: 'L0hHEr57ciLczsiWtd5n0Q==',
   secret: 'ciLczsiW',
@@ -12,10 +14,10 @@ module.exports = {
   },
   aliyunSMSDuration: 300,
   enableMobilePhone: false,
-  limitCompany: true,
+  limitCompany: false,
   companyDomain: 'gmail.com',
   serverPort: 8101,
   emailHost: 'smtp.163.com',
-  emailUser: '',
-  emailPass: ''
+  emailUser: QINGYU_EMAIL_USER,
+  emailPass: QINGYU_EMAIL_PASS
 }

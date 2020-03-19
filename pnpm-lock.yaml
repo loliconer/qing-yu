@@ -7,6 +7,7 @@ dependencies:
   sequelize: 5.21.5
   sqlite3: 4.1.1
 devDependencies:
+  '@lovue/utils': 1.0.0
   '@vue/cli-plugin-babel': 4.2.3_@vue+cli-service@4.2.3
   '@vue/cli-service': 4.2.3_f50833bf9dda1b0803205ce61c3213f2
   cache-loader: 4.1.0
@@ -916,6 +917,13 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-zN69TnSr0viRSU6cEDIcuPcP67QcpQ6uHACg58FiN9PDrU6SLyGW3MR4tiISbYxy1kDWAVPwD+XwQTWE5cigAA==
+  /@lovue/utils/1.0.0:
+    dev: true
+    engines:
+      node: '>= 10.0.0'
+      npm: '>= 6.0.0'
+    resolution:
+      integrity: sha512-RCvriI0OndFi+6IGDUkMTyR0g+yCrBFzdFQSvng0sHyXq28u15Yjc7MsKUaKcm144LVz3zAPdtJvREhXHSX2Uw==
   /@mrmlnc/readdir-enhanced/2.2.1:
     dependencies:
       call-me-maybe: 1.0.1
@@ -8759,6 +8767,7 @@ packages:
     resolution:
       integrity: sha512-92O1HWEjw27sBfgmXiixJWT5hRBp2eobqXicLtPBIDBhYB+1HpwZlXmbW2luivBJHBzki+7VyCLRtAkScbTBQA==
 specifiers:
+  '@lovue/utils': ^1.0.0
   '@vue/cli-plugin-babel': ~4.2.3
   '@vue/cli-service': ~4.2.3
   cache-loader: ^4.1.0
