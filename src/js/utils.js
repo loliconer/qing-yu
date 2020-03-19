@@ -4,21 +4,20 @@ export default {
   },
   makeCategoryTree(rows) {
     const result = []
+    const indexes = {}
+
+    rows.forEach((row, i) => {
+      row.icon = 'folder-flat'
+      row.expand_ = false
+      row.children = []
+      indexes[row.id] = i
+    })
 
     rows.forEach(row => {
-      row.icon = 'folder-flat'
-      row.children = []
       if (!row.parentId) {
         result.push(row)
       } else {
-        const pathArr = row.path.split('-').map(id => Number(id))
-        let index = 0, matched
-        matched = result.find(row => row.id === pathArr[index])
-        while (pathArr[index + 1]) {
-          matched = matched.children.find(row => row.id === pathArr[index + 1])
-          index++
-        }
-        matched.children.push(row)
+        rows[indexes[row.parentId]] && rows[indexes[row.parentId]].children.push(row)
       }
     })
 
