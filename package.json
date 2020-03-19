@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "got": "^9.6.0",
+    "got": "^10.6.0",
     "jsonwebtoken": "^8.5.1",
     "nodemailer": "^6.4.5",
     "restify": "^8.5.1",
@@ -24,7 +24,7 @@
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lovue": "^3.1.2",
-    "marked": "^0.7.0",
+    "marked": "^0.8.1",
     "nprogress": "^0.2.0",
     "prismjs": "^1.19.0",
     "qrcode.vue": "^1.7.0",
