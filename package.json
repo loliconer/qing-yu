@@ -1,42 +1,35 @@
 {
   "name": "qing-yu",
   "version": "1.1.0",
-  "author": "loliconer",
   "description": "Manage docs for your team.",
-  "license": "Anti 996",
-  "repository": {
-    "url": "https://github.com/loliconer/qing-yu.git",
-    "type": "git"
-  },
-  "bugs": {
-    "url": "https://github.com/loliconer/qing-yu/issues"
-  },
+  "author": "loliconer",
   "scripts": {
     "serve": "vue-cli-service serve --port 8100",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "core-js": "^3.6.4",
     "got": "^9.6.0",
     "jsonwebtoken": "^8.5.1",
-    "nodemailer": "^6.3.0",
-    "restify": "^8.4.0",
-    "sequelize": "^5.16.0",
-    "sqlite3": "^4.1.0"
+    "nodemailer": "^6.4.5",
+    "restify": "^8.5.1",
+    "sequelize": "^5.21.5",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-plugin-babel": "~4.2.3",
+    "@vue/cli-service": "~4.2.3",
     "cache-loader": "^4.1.0",
-    "less": "^3.10.3",
+    "less": "^3.11.1",
     "less-loader": "^5.0.0",
-    "lovue": "^3.1.1",
+    "lovue": "^3.1.2",
     "marked": "^0.7.0",
     "nprogress": "^0.2.0",
-    "prismjs": "^1.17.1",
-    "qrcode.vue": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "prismjs": "^1.19.0",
+    "qrcode.vue": "^1.7.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,
@@ -65,5 +58,13 @@
     "Chrome >= 70",
     "Firefox >= 65",
     "Safari >= 11"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/loliconer/qing-yu/issues"
+  },
+  "license": "Anti 996",
+  "repository": {
+    "url": "https://github.com/loliconer/qing-yu.git",
+    "type": "git"
+  }
 }
