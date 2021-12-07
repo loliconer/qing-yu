@@ -18,4 +18,4 @@ async function f(username) {
   console.log('设置成功')
 }
 
-f('vuedev2019@gmail.com')
+f('lovuedev@gmail.com')

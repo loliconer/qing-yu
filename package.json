@@ -9,27 +9,28 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "got": "^11.1.4",
+    "core-js": "^3.19.3",
+    "got": "^11.8.3",
     "jsonwebtoken": "^8.5.1",
-    "nodemailer": "^6.4.8",
-    "restify": "^8.5.1",
-    "sequelize": "^5.21.11",
-    "sqlite3": "^4.2.0"
+    "nodemailer": "^6.7.2",
+    "restify": "^8.6.0",
+    "sequelize": "^6.12.0-beta.1",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "@lovue/utils": "^1.0.0",
-    "@vue/cli-plugin-babel": "~4.4.1",
-    "@vue/cli-service": "~4.4.1",
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
     "cache-loader": "^4.1.0",
-    "less-loader": "^6.1.0",
-    "lovue": "^3.1.2",
-    "marked": "^1.1.0",
+    "less": "^4.1.2",
+    "less-loader": "7.3.0",
+    "lovue": "^3.1.4",
+    "marked": "^4.0.6",
     "nprogress": "^0.2.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.25.0",
     "qrcode.vue": "^1.7.0",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,

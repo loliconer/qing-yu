@@ -17,7 +17,7 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        strictMath: 'on'
+        additionalData: `@import (reference) "~src/less/Bootstrapping/Mixins";`
       }
     }
   },

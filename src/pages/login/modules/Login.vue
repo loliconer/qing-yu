@@ -47,42 +47,42 @@
   </form>
 </template>
 <script>
-  import {getSearchParam} from 'lovue/dist/utils.esm'
+import { getSearchParam } from '@lovue/utils'
 
-  export default {
-    name: 'c-login',
-    data() {
-      return {
-        type: 'pwd',
-        mobile: '',
-        loginCount: 0,
-        loadingLogin: false
-      }
-    },
-    props: {
-      enableMobilePhone: Boolean,
-      icons: Boolean
-    },
-    methods: {
-      async login(ev) {
-        if (this.loadingLogin) return
+export default {
+  name: 'c-login',
+  data() {
+    return {
+      type: 'pwd',
+      mobile: '',
+      loginCount: 0,
+      loadingLogin: false
+    }
+  },
+  props: {
+    enableMobilePhone: Boolean,
+    icons: Boolean
+  },
+  methods: {
+    async login(ev) {
+      if (this.loadingLogin) return
 
-        this.loadingLogin = true
-        const body = await $fetch.form('session', new FormData(ev.target)).catch(this.error)
-        this.loadingLogin = false
-        if (body === undefined) return
+      this.loadingLogin = true
+      const body = await $fetch.form('session', new FormData(ev.target)).catch(this.error)
+      this.loadingLogin = false
+      if (body === undefined) return
 
-        localStorage.setItem('token', body)
+      localStorage.setItem('token', body)
 
-        const next = getSearchParam('next')
-        if (next) return location.href = next
+      const next = getSearchParam('next')
+      if (next) return location.href = next
 
-        if (sessionStorage.logoutPage && !sessionStorage.logoutPage.includes('login.html')) {
-          location.href = sessionStorage.logoutPage
-        } else {
-          location.href = '/index.html'
-        }
+      if (sessionStorage.logoutPage && !sessionStorage.logoutPage.includes('login.html')) {
+        location.href = sessionStorage.logoutPage
+      } else {
+        location.href = '/index.html'
       }
     }
   }
+}
 </script>

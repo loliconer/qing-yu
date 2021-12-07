@@ -65,72 +65,72 @@
 </template>
 
 <script>
-  import {genSlug} from 'src/js/utils'
-  import {getSearchParam} from 'lovue/dist/utils.esm'
+import {genSlug} from 'src/js/utils'
+import { getSearchParam } from '@lovue/utils'
 
-  export default {
-    name: 'Repo',
-    data() {
-      return {
-        urlPrefix: `${location.origin}/repos/`,
-        slug: '',
-        repo: {},
-        titles: ['目录', '管理', '设置'],
-        tabIndex: 0,
-        setMenus: ['基础设置', '高级设置'],
-        setIndex: 0,
-        loadings: {
-          saveBasicSet: false
-        }
+export default {
+  name: 'Repo',
+  data() {
+    return {
+      urlPrefix: `${location.origin}/repos/`,
+      slug: '',
+      repo: {},
+      titles: ['目录', '管理', '设置'],
+      tabIndex: 0,
+      setMenus: ['基础设置', '高级设置'],
+      setIndex: 0,
+      loadings: {
+        saveBasicSet: false
       }
-    },
-    props: {
-      user: Object
-    },
-    methods: {
-      async getRepo() {
-        const body = await $fetch.get(`repos/${this.slug}`).catch(this.error)
-        if (body === undefined) return
-
-        document.title = body.name
-        this.repo = body
-      },
-      refreshSlug() {
-        this.repo.slug = genSlug()
-      },
-      async saveBasicSet() {
-        if (this.loadings.saveBasicSet) return
-        this.loadings.saveBasicSet = true
-
-        const body = await $fetch.put(`repos/${this.slug}`, {
-          name: this.repo.name,
-          description: this.repo.description,
-          slug: this.repo.slug
-        }).catch(this.error)
-        this.loadings.saveBasicSet = false
-        if (body === undefined) return
-
-        this.success('更新成功')
-        setTimeout(() => location.href = `/repo.html?slug=${this.repo.slug}`, 1000)
-      },
-      del() {
-        this.modal({
-          content: `确认删除知识库：${this.repo.name}？`,
-          fixed: true,
-          confirm: async () => {
-            const body = await $fetch.delete(`repos/${this.repo.slug}`).catch(this.error)
-            if (body === undefined) return
-
-            this.success('删除成功')
-            setTimeout(() => location.href = '/home.html', 1000)
-            return true
-          }
-        })
-      }
-    },
-    created() {
-      this.slug = getSearchParam('slug')
-      this.getRepo()
     }
+  },
+  props: {
+    user: Object
+  },
+  methods: {
+    async getRepo() {
+      const body = await $fetch.get(`repos/${this.slug}`).catch(this.error)
+      if (body === undefined) return
+
+      document.title = body.name
+      this.repo = body
+    },
+    refreshSlug() {
+      this.repo.slug = genSlug()
+    },
+    async saveBasicSet() {
+      if (this.loadings.saveBasicSet) return
+      this.loadings.saveBasicSet = true
+
+      const body = await $fetch.put(`repos/${this.slug}`, {
+        name: this.repo.name,
+        description: this.repo.description,
+        slug: this.repo.slug
+      }).catch(this.error)
+      this.loadings.saveBasicSet = false
+      if (body === undefined) return
+
+      this.success('更新成功')
+      setTimeout(() => location.href = `/repo.html?slug=${this.repo.slug}`, 1000)
+    },
+    del() {
+      this.modal({
+        content: `确认删除知识库：${this.repo.name}？`,
+        fixed: true,
+        confirm: async () => {
+          const body = await $fetch.delete(`repos/${this.repo.slug}`).catch(this.error)
+          if (body === undefined) return
+
+          this.success('删除成功')
+          setTimeout(() => location.href = '/home.html', 1000)
+          return true
+        }
+      })
+    }
+  },
+  created() {
+    this.slug = getSearchParam('slug')
+    this.getRepo()
   }
+}
 </script>

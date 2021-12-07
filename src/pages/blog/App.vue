@@ -15,72 +15,72 @@
   </div>
 </template>
 <script>
-  import VShare from 'src/components/Share.vue'
-  import {getSearchParam} from 'lovue/dist/utils.esm'
+import VShare from 'src/components/Share.vue'
+import { getSearchParam } from '@lovue/utils'
 
-  export default {
-    name: 'App',
-    data() {
-      return {
-        pageUrl: location.href.replace('localhost', '192.168.4.194'),
-        user: {},
-        blog: {}
-      }
+export default {
+  name: 'App',
+  data() {
+    return {
+      pageUrl: location.href.replace('localhost', '192.168.4.194'),
+      user: {},
+      blog: {}
+    }
+  },
+  components: { VShare },
+  methods: {
+    async getUser() {
+      const body = await $fetch.get('user').catch(error => {
+      })
+      if (body === undefined) return
+
+      this.user = body
     },
-    components: { VShare },
-    methods: {
-      async getUser() {
-        const body = await $fetch.get('user').catch(error => {
-        })
-        if (body === undefined) return
+    async getBlog(id) {
+      const body = await $fetch.get(`blogs/${id}`).catch(this.error)
+      if (body === undefined) return
 
-        this.user = body
-      },
-      async getBlog(id) {
-        const body = await $fetch.get(`blogs/${id}`).catch(this.error)
-        if (body === undefined) return
+      body.attachments = JSON.parse(body.attachments)
+      document.title = body.title
 
-        body.attachments = JSON.parse(body.attachments)
-        document.title = body.title
-
-        body.content = marked(body.content)
-        setTimeout(() => Prism.highlightAll(), 0)
-        this.blog = body
-      },
-      edit() {
-        location.href = `/post.html?id=${this.blog.id}`
-      },
-      del() {
-        const blogId = this.blog.id
-        this.modal({
-          content: '确定删除吗？',
-          fixed: true,
-          async confirm() {
-            const body = await $fetch.delete(`blogs/${blogId}`).catch(this.error)
-            if (body === undefined) return
-
-            this.success('删除成功')
-            setTimeout(() => location.href = '/', 2400)
-          }
-        })
-      }
+      body.content = marked(body.content)
+      setTimeout(() => Prism.highlightAll(), 0)
+      this.blog = body
     },
-    created() {
-      this.getUser()
-      this.getBlog(getSearchParam('id'))
+    edit() {
+      location.href = `/post.html?id=${this.blog.id}`
     },
-    mounted() {
-      marked.setOptions({
-        renderer: new marked.Renderer(),
-        gfm: true,
-        tables: true,
-        breaks: true,
-        pedantic: false,
-        sanitize: false,
-        smartLists: true,
-        smartypants: false,
-        mangle: false
+    del() {
+      const blogId = this.blog.id
+      this.modal({
+        content: '确定删除吗？',
+        fixed: true,
+        async confirm() {
+          const body = await $fetch.delete(`blogs/${blogId}`).catch(this.error)
+          if (body === undefined) return
+
+          this.success('删除成功')
+          setTimeout(() => location.href = '/', 2400)
+        }
       })
     }
+  },
+  created() {
+    this.getUser()
+    this.getBlog(getSearchParam('id'))
+  },
+  mounted() {
+    marked.setOptions({
+      renderer: new marked.Renderer(),
+      gfm: true,
+      tables: true,
+      breaks: true,
+      pedantic: false,
+      sanitize: false,
+      smartLists: true,
+      smartypants: false,
+      mangle: false
+    })
   }
+}
 </script>
